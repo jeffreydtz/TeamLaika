@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './images/logo.png'
 import './App.css';
 import pgimg from './images/torta.png'
 
