@@ -6,13 +6,16 @@ const Home = () => {
    <div>
        <div className="title-container">
         <h1 className="custom-title">Bienvenidos</h1>
-        <p className="title-desc">Dejate llevar por los sabores!! </p>
+        <p className="title-desc">¡Dejate llevar por los sabores! </p>
        </div>
         <div className="contents-container">
-            <h2>que ofrecemos?</h2>
+            <h2>¿Quiénes somos?</h2>
+            <h3>Somos DejateTentar, aficionados por el mundo de la pastelería, queremos compartirles nuestros sabores
+                para que disfruten con nosotros</h3>
         <div className="contens-div">
             <ul className="contents">
                 <img src={pgimg} className="picture"/>
+                     <h4> Queremos ofrecerte:</h4>
                 <li className="list-hover">TORTAS</li>
                 <li className="list-hover">TORTAS DE CUMPLEAÑOS</li>
                 <li className="list-hover">ALFAJORES</li>
