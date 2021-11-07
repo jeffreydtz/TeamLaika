@@ -38,7 +38,7 @@
   font-size: 50px;
 }
 
-.list-hover:hover{
+.list-hover{
   font-size: 120%;
 }
 
@@ -64,4 +64,10 @@
 
 
 }
+.picture{
+  height: 400px;
+  width: 600px;
+}
+
+
 

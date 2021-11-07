@@ -1,51 +1,49 @@
-import logo from './images/logo.png'
-import './App.css';
-import pgimg from './images/torta.png'
+import React from "react";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
 } from "react-router-dom";
-
+import Home from "./componentes/Home";
+// import Navbar from "./componentes/Navbar";
+import './App.css';
+import Navbar from "./componentes/Navbar/Navbar";
 
 function App() {
-  return (
-      <div>
-        <h1 className="custom-title">DejateTentar</h1>
-        <div className="nav-bar">
-          <h4 className="nav-element nav-hover">Inicio</h4>
+    return (
+        <Router>
+            <div>
+                <Navbar>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        {/*<li>*/}
+                        {/*    <Link to="/about">Navbar</Link>*/}
+                        {/*</li>*/}
+                        {/*<li>*/}
+                        {/*    <Link to="/users">Users</Link>*/}
+                        {/*</li>*/}
+                    </ul>
+                </Navbar>
 
-          <h4 className="nav-element nav-hover">Productos</h4>
-          <h4 className="nav-element nav-hover">Cursos</h4>
-          <h4 className="nav-element nav-hover">Mi Perfil</h4>
-        </div>
-        <div className="title-container">
-          <h1 className="custom-title">Bienvenidos</h1>
-          <p className="title-desc">¡Dejate llevar por los sabores! </p>
-        </div>
-        <div className="contents-container">
-        <h2>¿Quiénes somos?</h2>
-            <h3>Somos DejateTentar, aficionados por el mundo de la pastelería, queremos compartirles nuestros sabores
-                para que disfruten con nosotros</h3>
-        <div className="contens-div">
-          <ul className="contents">
-          <img src={pgimg} className="picture"/>
-              <h4> Queremos ofrecerte:</h4>
-            <li className="list-hover">TORTAS</li>
-            <li className="list-hover">TORTAS DE CUMPLEAÑOS</li>
-            <li className="list-hover">ALFAJORES</li>
-            <li className="list-hover">GALLETITAS</li>
-            <li className="list-hover">MASAS SECAS</li>
-            <li className="list-hover">TARTAS</li>
-            <li className="list-hover">CHIPAS</li>
-            <li className="list-hover">BUDINES</li>
-          </ul>
-        </div>
-        </div>
-      </div>
-
-);
+                {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+                <Switch>
+                    {/*<Route path="/about">*/}
+                    {/*    <About />*/}
+                    {/*</Route>*/}
+                    {/*<Route path="/users">*/}
+                    {/*    <Users />*/}
+                    {/*</Route>*/}
+                    <Route path="/">
+                        <Home />
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
