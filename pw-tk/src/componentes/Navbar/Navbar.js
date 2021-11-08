@@ -13,7 +13,7 @@ function Navbar() {
 
                 <Link to="/Products"> <h4 className="nav-element nav-hover">Productos</h4></Link>
                 {/*<h4 className="nav-element nav-hover">Cursos</h4>*/}
-                <Link to={'/componentes/Profile'}><h4 className="nav-element nav-hover">Mi Perfil</h4></Link>
+                <Link to={'/Profile'}><h4 className="nav-element nav-hover">Mi Perfil</h4></Link>
             </div>
         </div>
     );
