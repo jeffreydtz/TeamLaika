@@ -28,15 +28,21 @@ function App() {
                     {/*<Route path="/users">*/}
                     {/*    <Users />*/}
                     {/*</Route>*/}
+                    <Route path="/" exact={true}>
+                        <Home />
+                    </Route>
                     <Route path="/Products" exact={true}>
                         <Products />
                     </Route>
                     <Route path="/Profile" exact={true}>
                         <Profile />
                     </Route>
-                    <Route path="/">
-                        <Home />
-                    </Route>
+                    {/*<Route path="/">*/}
+                    {/*    <Home />*/}
+                    {/*</Route>*/}
+                    <route path='*'>
+                        <h1>404 NOT FOUND </h1>
+                    </route>
                 </Switch>
             </div>
         </Router>
