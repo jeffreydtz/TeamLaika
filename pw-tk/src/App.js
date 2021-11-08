@@ -9,6 +9,8 @@ import Home from "./componentes/Home";
 // import Navbar from "./componentes/Navbar";
 import './App.css';
 import Navbar from "./componentes/Navbar/Navbar";
+import Products from "./componentes/Products";
+
 
 function App() {
     return (
@@ -17,11 +19,11 @@ function App() {
                 <Navbar>
                     <ul>
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/Home">Home</Link>
                         </li>
-                        {/*<li>*/}
-                        {/*    <Link to="/about">Navbar</Link>*/}
-                        {/*</li>*/}
+                        <li>
+                            <Link to="/Products">Productos</Link>
+                        </li>
                         {/*<li>*/}
                         {/*    <Link to="/users">Users</Link>*/}
                         {/*</li>*/}
@@ -37,7 +39,10 @@ function App() {
                     {/*<Route path="/users">*/}
                     {/*    <Users />*/}
                     {/*</Route>*/}
-                    <Route path="/">
+                    <Route path="/Products" exact={true}>
+                        <Products />
+                    </Route>
+                    <Route path="/Home" exact={true}>
                         <Home />
                     </Route>
                 </Switch>

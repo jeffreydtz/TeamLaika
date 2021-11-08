@@ -1,8 +1,9 @@
 import pgimg from "../images/torta.png";
 import React from "react";
-import alfajores from "../images/alfajores.png";
-import budin from "../images/budin.png";
-import chipas from "../images/chipas.png";
+import alfajores from '../images/alfajores.png';
+import budin from '../images/budin.png';
+import chipas from '../images/chipas.png'
+
 
 
 const Home = () => {
@@ -12,24 +13,24 @@ const Home = () => {
                 <h1 className="custom-title">Bienvenidos</h1>
                 <p className="title-desc">¡Dejate llevar por los sabores! </p>
             </div>
-            <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
-                    <div className="carousel-item" data-bs-interval="4000">
+                    <div className="carousel-item active">
                         <img src={alfajores} className="d-block w-100" alt="alfajores"/>
                     </div>
-                    <div className="carousel-item" data-bs-interval="4000">
+                    <div className="carousel-item">
                         <img src={budin} className="d-block w-100" alt="budin"/>
                     </div>
-                    <div className="carousel-item" data-bs-interval="4000">
+                    <div className="carousel-item">
                         <img src={chipas} className="d-block w-100" alt="chipas"/>
                     </div>
                 </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                         data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>
                 </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
                         data-bs-slide="next">
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
@@ -60,5 +61,3 @@ const Home = () => {
 
 
 export default Home;
-
-
