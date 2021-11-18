@@ -14,7 +14,7 @@ function Card({ imageSource, title, text, url }) {
                 <p className="card-text text-secondary">
                     {text
                         ? text
-                        : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam deserunt fuga accusantium excepturi quia, voluptates obcaecati nam in voluptas perferendis velit harum dignissimos quasi ex? Tempore repellat quo doloribus magnam."}
+                        : "Lorem ipsum dolor sit amet consectetur, adipisicing elit."}
                 </p>
                 <a
                     href={url ? url : "#!"}
