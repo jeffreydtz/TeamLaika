@@ -7,11 +7,11 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from api.models import Course
-from api.serializers import CourseSerializer, RegisterSerializer, MeSerializer
+from api.serializers import Recipeserializer, RegisterSerializer, MeSerializer
 
 
 class CourseViewSet(viewsets.ModelViewSet):
-    serializer_class = CourseSerializer
+    serializer_class = Recipeserializer
     queryset = Course.objects.all()
     # permission_classes = [IsAuthenticated] esto es si quiero autenticar get, post, put
     def get_permissions(self):

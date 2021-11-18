@@ -1,9 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
+
 
 import "./card.css";
 
-function Card({ imageSource, title, text, url }) {
+function Card({ imageSource, title, description}) {
     return (
         <div className="card text-center bg-dark animate__animated animate__fadeInUp">
             <div className="overflow">
@@ -12,28 +12,37 @@ function Card({ imageSource, title, text, url }) {
             <div className="card-body text-light">
                 <h4 className="card-title">{title}</h4>
                 <p className="card-text text-secondary">
-                    {text
-                        ? text
-                        : "Lorem ipsum dolor sit amet consectetur, adipisicing elit."}
+                    {description}
                 </p>
-                <a
-                    href={url ? url : "#!"}
-                    target="_blank"
-                    className="btn btn-outline-secondary border-0"
-                    rel="noreferrer"
-                >
-                    Go to {title}
-                </a>
             </div>
         </div>
     );
 }
 
-Card.propTypes = {
-    title: PropTypes.string.isRequired,
-    text: PropTypes.string,
-    url: PropTypes.string,
-    imageSource: PropTypes.string
-};
+
 
 export default Card;
+
+
+import pgimg from "../images/programacion.jpeg";
+import {Link} from "react-router-dom";
+
+
+function SubjectCard ({subject}) {
+
+    return (
+        <div className="card-container-custom">
+            <div className="card">
+                <img src={pgimg} className="card-img-top" alt="..."/>
+                <div className="card-body">
+                    <h5 className="card-title">{subject.name}</h5>
+                    <p className="card-text">
+                        {subject.description}
+                    </p>
+                    <Link to={`/main/courses/detail/${subject.name}`}><a className="btn btn-primary">Ver más</a></Link>
+                </div>
+            </div>
+        </div>
+    )
+}
+export default

@@ -4,13 +4,13 @@ from rest_framework import serializers
 from api.models import Course
 
 
-class CourseSerializer(serializers.ModelSerializer):
+class Recipeserializer(serializers.ModelSerializer):
     class Meta:
         model = Course
         fields = "__all__"
 
     def create(self, validated_data):
-        course = super(CourseSerializer, self).create(validated_data)
+        course = super(Recipeserializer, self).create(validated_data)
         return course
 
 
