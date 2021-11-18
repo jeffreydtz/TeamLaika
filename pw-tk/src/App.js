@@ -9,7 +9,7 @@ import Home from "./componentes/Home";
 // import Navbar from "./componentes/Navbar";
 import './App.css';
 import Navbar from "./componentes/Navbar/Navbar";
-import Products from "./componentes/Products";
+import Courses from "./componentes/Courses";
 import Profile from "./componentes/Profile";
 
 
@@ -31,8 +31,8 @@ function App() {
                     <Route path="/" exact={true}>
                         <Home />
                     </Route>
-                    <Route path="/Products" exact={true}>
-                        <Products />
+                    <Route path="/Courses" exact={true}>
+                        <Courses />
                     </Route>
                     <Route path="/Profile" exact={true}>
                         <Profile />
