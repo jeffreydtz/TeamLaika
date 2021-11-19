@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import Cards from "./Cards/Cards";
 import {httpGet, httpPost} from "../utils/httpFunctions";
+import Card from "./Cards/Card";
 const axios = require('axios');
 
 
@@ -9,6 +9,8 @@ const Recipes = () => {
     const [Recipes, setRecipes] = useState([])
     const [name, setName] = useState([])
     const [description, setDescription] = useState([])
+    const [price, setPrice] = useState([])
+
 
 
     const fetchRecipes = () => {
@@ -17,7 +19,7 @@ const Recipes = () => {
     }
 
     const createCourse = () => {
-        httpPost('api/Recipes/', { name: name, description: description})
+        httpPost('api/Recipes/', { name: name, description: description, price: price})
             .then(fetchRecipes)
     }
 
@@ -45,17 +47,25 @@ const Recipes = () => {
                                placeholder="Ej: Ingredientes: 1 paquete de galletitas oreos, etc."
                         />
                     </div>
-                    <form>
-                        <div className="form-group">
-                            <label htmlFor="exampleFormControlFile1">Ingrese imagen de receta terminada</label>
-                            <input type="file" className="form-control-file" id="exampleFormControlFile1"/>
-                        </div>
-                    </form>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label">Precio</label>
+                        <input type="text" id="disabledTextInput" className="form-control"  value={price}
+                               onChange={(e) => setPrice(e.target.value) }
+                               placeholder="Ej: 200"
+                        />
+                    </div>
                     <button type="submit" className="btn btn-primary">CREAR RECETA</button>
                 </fieldset>
             </form>
-            <div>
-                <Cards />
+            <div className="container d-flex justify-content-center align-items-center h-100">
+                <div className="row">
+                    {
+                        Recipes.map((maprecipe) => {
+                            return (
+                                <Card receta={maprecipe}/>)
+                        })
+                    }
+                </div>
             </div>
         </div>
 

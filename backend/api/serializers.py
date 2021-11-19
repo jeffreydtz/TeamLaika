@@ -1,16 +1,16 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from api.models import Course
+from api.models import Recipe
 
 
-class Recipeserializer(serializers.ModelSerializer):
+class RecipeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Course
+        model = Recipe
         fields = "__all__"
 
     def create(self, validated_data):
-        course = super(Recipeserializer, self).create(validated_data)
+        course = super(RecipeSerializer, self).create(validated_data)
         return course
 
 
