@@ -8,7 +8,7 @@ Trabajo practico de la materia Programacion Web realizado por Jeffrey Dietz, Fed
 La pagina permite visualizar  tortas y recetas de pasteleria. Cuenta con un sistema de Usuarios el cual permite registrar un usuario y al estar autenticado podemos
 entrar a nuestro perfil y cargar, editar y eliminar nuestras propias recetas.
 
-#Instalacion
+# Instalacion
 
 Lo primero que debemos realizar es clonar el repositorio en nuestra pc, esto puede realizarse mediante la aplicacion github desktop o escribiendo el siguiente 
 comando en la terminal de nuestra IDE:
