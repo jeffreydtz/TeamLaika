@@ -10,8 +10,8 @@ class RecipeSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
     def create(self, validated_data):
-        course = super(RecipeSerializer, self).create(validated_data)
-        return course
+        recipe = super(RecipeSerializer, self).create(validated_data)
+        return recipe
 
 
 class RegisterSerializer(serializers.ModelSerializer):
