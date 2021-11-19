@@ -4,6 +4,10 @@
   font-family: Helvetica;
 }
 
+.inputWide{
+  width: 40%;
+}
+
 .nav-bar{
   background-color: burlywood;
   height: fit-content;

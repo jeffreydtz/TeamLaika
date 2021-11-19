@@ -3,7 +3,7 @@ import image1 from "./CardsImage.png";
 
 import "./card.css";
 
-function Card(receta) {
+function Card({receta}) {
     return (
         <div className="card text-center bg-dark animate__animated animate__fadeInUp">
             <div className="overflow">
@@ -14,12 +14,11 @@ function Card(receta) {
                 <p className="card-text text-secondary">
                     {receta.description}
                 </p>
+                <h3>Precio: {receta.price}</h3>
             </div>
         </div>
     );
 }
-
-
 
 export default Card;
 

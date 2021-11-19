@@ -37,9 +37,6 @@ function App() {
                     <Route path="/Profile" exact={true}>
                         <Profile />
                     </Route>
-                    {/*<Route path="/">*/}
-                    {/*    <Home />*/}
-                    {/*</Route>*/}
                     <route path='*'>
                         <h1>404 NOT FOUND </h1>
                     </route>
