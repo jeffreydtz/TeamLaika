@@ -3,16 +3,16 @@ import React, {useState} from "react";
 import {httpPost} from "../../utils/httpFunctions";
 import {Link, useHistory} from 'react-router-dom'
 
-const LoginScreen = () => {
+const Register = () => {
 
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
 
     const history = useHistory();
 
-    const login = (e) => {
+    const Register = (e) => {
         e.preventDefault()
-        httpPost('api/login/', {username: username, password: password}).then((res) => {
+        httpPost('api/register/', {username: username, password: password}).then((res) => {
             localStorage.setItem('token', res.data.access)
             history.push('/')
         })
@@ -20,8 +20,8 @@ const LoginScreen = () => {
 
     return (
         <div className='login-screen'>
-            <div className='welcome-text-container'><h1>Bienvenido, ingrese a su perfil</h1></div>
-            <form className='form-container' onSubmit={login}>
+            <div className='welcome-text-container'><h1>Bienvenido, cree su perfil</h1></div>
+            <form className='form-container' onSubmit={Register}>
                 <div className="mb-3">
                     <label htmlFor="exampleFormControlInput1" className="form-label" >Username</label>
                     <input
@@ -42,15 +42,12 @@ const LoginScreen = () => {
                         id="exampleFormControlInput1"
                         placeholder="Password" />
                 </div>
-                <div className={'button-container'} >
-                    <button type="submit" className="btn btn-primary">Login</button>
-                    <button className="btn">
-                        <Link to={'/Register'}>Register</Link>
-                    </button>
+                <div className={'button-container'}>
+                    <button type="submit" className="btn btn-primary">Register</button>
                 </div>
             </form>
         </div>
     )
 }
 
-export default LoginScreen
+export default Register

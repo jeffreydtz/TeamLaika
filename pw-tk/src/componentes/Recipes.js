@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {httpGet, httpPost} from "../utils/httpFunctions";
+import {httpDelete, httpGet, httpPost} from "../utils/httpFunctions";
 import Card from "./Cards/Card";
 import "../App.css"
 
@@ -31,6 +31,11 @@ const Recipes = () => {
 
     const createRecipe = () => {
         httpPost('api/Recipes/', {name: name, description: description, price: price})
+            .then(fetchRecipes)
+    }
+
+    const deleteRecipe = () =>{
+        httpDelete('api/Recipes/'+{id:this.id} +"/")
             .then(fetchRecipes)
     }
 

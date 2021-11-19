@@ -13,6 +13,7 @@ import Recipes from "./componentes/Recipes";
 import Profile from "./componentes/Profile";
 import LoginScreen from "./componentes/LoginScreen/LoginScreen";
 import AuthRoute from "./componentes/AuthRoute";
+import Register from "./componentes/LoginScreen/Register";
 
 
 
@@ -32,6 +33,9 @@ function App() {
                     </Route>
                     <Route path="/" exact={true}>
                         <Home />
+                    </Route>
+                    <Route path="/Register" exact={true}>
+                        <Register />
                     </Route>
                     <Route path="/Recipes" exact={true}>
                         <Recipes />

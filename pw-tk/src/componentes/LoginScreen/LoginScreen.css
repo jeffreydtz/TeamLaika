@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     padding: 40px 80px 40px 40px ;
-    background-color: darkslategray;
+    background-color: lightgoldenrodyellow;
     height: 1000px;
     justify-content: space-between;
 }
@@ -24,7 +24,7 @@
 }
 
 .welcome-text-container {
-    background-color: darkgrey;
+    background-color: moccasin;
     padding: 10px;
     border-radius: 10px;
 }

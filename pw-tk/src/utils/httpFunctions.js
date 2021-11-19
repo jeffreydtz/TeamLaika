@@ -17,3 +17,19 @@ export const httpPost = async (endpoint, data) => {
         }
     })
 }
+
+export const httpPut = async (endpoint, data) => {
+    return axios.put(baseUrl + endpoint, data, {
+        headers: {
+            authorization: 'Bearer ' + localStorage.getItem('token')
+        }
+    })
+}
+
+export const httpDelete = async (endpoint, data) => {
+    return axios.delete(baseUrl + endpoint, data, {
+        headers: {
+            authorization: 'Bearer ' + localStorage.getItem('token')
+        }
+    })
+}
