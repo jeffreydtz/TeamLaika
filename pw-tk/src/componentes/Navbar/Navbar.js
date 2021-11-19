@@ -1,7 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import Home from "../Home";
-import Recipes from "../Recipes";
+import "./Navbar.css";
+
+
 
 function Navbar() {
     return (
@@ -14,6 +15,8 @@ function Navbar() {
                 <Link to="/Recipes"> <h4 className="nav-element nav-hover">Recetas</h4></Link>
 
                 <Link to={'/Profile'}><h4 className="nav-element nav-hover">Mi Perfil</h4></Link>
+
+                <Link to={'/login'}><h4 className="nav-element nav-hover">Log in</h4></Link>
             </div>
         </div>
     );

@@ -11,6 +11,8 @@ import './App.css';
 import Navbar from "./componentes/Navbar/Navbar";
 import Recipes from "./componentes/Recipes";
 import Profile from "./componentes/Profile";
+import LoginScreen from "./componentes/LoginScreen/LoginScreen";
+import AuthRoute from "./componentes/AuthRoute";
 
 
 
@@ -22,12 +24,12 @@ function App() {
                 {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
                 <Switch>
-                    {/*<Route path="/about">*/}
-                    {/*    <About />*/}
-                    {/*</Route>*/}
-                    {/*<Route path="/users">*/}
-                    {/*    <Users />*/}
-                    {/*</Route>*/}
+                    <AuthRoute exact={true} path={`/profile`}>
+                        <Profile />
+                    </AuthRoute>
+                    <Route exact={true} path="/login">
+                        <LoginScreen />
+                    </Route>
                     <Route path="/" exact={true}>
                         <Home />
                     </Route>

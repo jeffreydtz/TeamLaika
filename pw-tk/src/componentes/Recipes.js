@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {httpGet, httpPost} from "../utils/httpFunctions";
 import Card from "./Cards/Card";
+import "../App.css"
+
 
 
 const Recipes = () => {
@@ -19,15 +21,8 @@ const Recipes = () => {
         return filtered ? "Dejar de filtrar" : "Filtrar"
     }
 
-    let finalRecipes;
+    let finalRecipes = recipes;
 
-    if (filtered) {
-        finalRecipes = recipes.filter((recipe) => {
-            return recipe.price > 100
-        })
-    } else {
-        finalRecipes = recipes
-    }
 
     const fetchRecipes = () => {
         httpGet('api/Recipes/')
@@ -39,18 +34,13 @@ const Recipes = () => {
             .then(fetchRecipes)
     }
 
-    useEffect(createRecipe, [])
+    useEffect(fetchRecipes, [])
 
 
     return (
         <div>
             <div>
                 <h1>Recetas de cocina</h1>
-            </div>
-            <div>
-            <button className="btn btn-primary" onClick={clickFunction}>
-                {getName()}
-            </button>
             </div>
             <div className="inputWide">
                 <form onSubmit={createRecipe}>
@@ -80,8 +70,7 @@ const Recipes = () => {
                     </fieldset>
                 </form>
             </div>
-            <div className="container d-flex justify-content-center align-items-center h-100">
-                <div className="row">
+            <div className="container d-flex justify-content-around h-100">
                     {
                         finalRecipes
                             .map((maprecipe) => {
@@ -90,7 +79,6 @@ const Recipes = () => {
                                 )
                             })
                     }
-                </div>
             </div>
         </div>)
 }

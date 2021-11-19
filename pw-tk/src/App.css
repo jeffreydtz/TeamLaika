@@ -1,26 +1,11 @@
 
 
 .body{
-  font-family: Helvetica;
+  font-family: Helvetica, sans-serif;
 }
 
 .inputWide{
   width: 40%;
-}
-
-.nav-bar{
-  background-color: burlywood;
-  height: fit-content;
-  display: flex;
-  flex-direction: row;
-}
-.nav-hover:hover{
-  align-self: flex-start;
-  font-size: 120%;
-}
-.nav-element{
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .title-container {
@@ -38,7 +23,7 @@
 }
 
 .custom-title{
-  font-family: Futura;
+  font-family: Futura, sans-serif;
   font-size: 50px;
 }
 
@@ -74,5 +59,10 @@
 }
 
 
-
+.cards-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
 
