@@ -13,18 +13,19 @@ from api.serializers import RecipeSerializer, RegisterSerializer, MeSerializer
 class RecipeViewSet(viewsets.ModelViewSet):
     serializer_class = RecipeSerializer
     queryset = Recipe.objects.all()
+
     # permission_classes = [IsAuthenticated] esto es si quiero autenticar get, post, put
     def get_permissions(self):
         if self.action == 'create':
             self.permission_classes = [IsAuthenticated]
         else:
             self.permission_classes = []
-        return super(RecipeViewSet, self).get_permissions() #esto es para autenticr solo una
-
+        return super(RecipeViewSet, self).get_permissions()  # esto es para autenticr solo una
 
 
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
+
 
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])

@@ -147,7 +147,7 @@ SWAGGER_SETTINGS = {
 # por ej: http://localhost:3000
 #
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000', 'http://localhost:3000/Recipes'
+    'http://localhost:3000'
 ]
 
 # dejar esta setting en True permite que cualquier front end app pueda hacer requests a este backend gnorando
