@@ -20,6 +20,14 @@ function Card({receta}) {
                 <h3>Precio: {receta.price}</h3>
                 <h4>id: {receta.id}</h4>
             </div>
+            <div>
+                <button className="bg-black text-white px-2 px-1">
+                    Borrar Receta
+                </button>
+                <button className="bg-black text-white px-2 px-1">
+                    Editar Receta
+                </button>
+            </div>
         </div>
     );
 }
