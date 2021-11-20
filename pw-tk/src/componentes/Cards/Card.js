@@ -1,10 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import image1 from "./CardsImage.png";
 import "./card.css";
-import {httpDelete, httpGet} from "../../utils/httpFunctions";
+import {httpDelete, httpGet, httpPut} from "../../utils/httpFunctions";
 
 function Card({receta}) {
 
+    const [recipes, setRecipes] = useState([])
+    const [description, setDescription] = useState([])
+
+    let idrecipe = receta.id;
+    let recipename = receta.name;
+    let recipeprice = receta.price;
+
+    const deleteRecipe = () =>{
+        httpDelete('api/Recipes/'+idrecipe +"/")
+            .then(fetchRecipes)
+    }
+    const modifyRecipe = () =>{
+        httpPut('api/Recipes/'+idrecipe+"/", {id: idrecipe ,name: recipename, description: description,price: recipeprice})
+            .then(fetchRecipes)
+    }
+
+
+    const fetchRecipes = () => {
+        httpGet('api/Recipes/')
+            .then((res) => setRecipes(res.data))
+    }
+
+    let finalRecipes = recipes;
 
     return (
 
@@ -19,14 +42,23 @@ function Card({receta}) {
                 </p>
                 <h3>Precio: {receta.price}</h3>
                 <h4>id: {receta.id}</h4>
+
             </div>
             <div>
-                <button className="bg-black text-white px-2 px-1">
+                <form onSubmit={deleteRecipe}>
+                <button type="submit" className="bg-black text-white px-2 px-1">
                     Borrar Receta
                 </button>
-                <button className="bg-black text-white px-2 px-1">
-                    Editar Receta
+                </form>
+                <form onSubmit={modifyRecipe}>
+                    <input type="text" id="disabledTextInput" className="form-control" value={description}
+                           onChange={(e) => setDescription(e.target.value)}
+                           placeholder="Modificar receta"
+                    />
+                <button type="submit" className="bg-black text-white px-2 px-1">
+                    Modificar Receta
                 </button>
+            </form>
             </div>
         </div>
     );

@@ -14,6 +14,7 @@ import Profile from "./componentes/Profile";
 import LoginScreen from "./componentes/LoginScreen/LoginScreen";
 import AuthRoute from "./componentes/AuthRoute";
 import Register from "./componentes/LoginScreen/Register";
+import Footer from "./componentes/Footer/Footer";
 
 
 
@@ -47,6 +48,7 @@ function App() {
                         <h1>404 NOT FOUND </h1>
                     </route>
                 </Switch>
+                <Footer />
             </div>
         </Router>
     );
