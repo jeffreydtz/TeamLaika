@@ -17,7 +17,7 @@ comando en la terminal de nuestra IDE:
 git clone https://github.com/jeffreydtz/TeamLaika.git
 ```
 
-Luego procedemos a instalar las dependencias del frontend mediante los siguientes comandos:
+Luego procedemos a instalar las dependencias del frontend mediante los siguientes comandos (EN WEBSTORM):
 
 ```
 cd pw-tk
@@ -25,7 +25,8 @@ cd pw-tk
 ```
 npm install
 ```
-Luego nos posicionaremos y configuraremos el backend con los siguientes comandos:
+Luego abriremos el proyecto en PYCHARM y configuraremos el backend con los siguientes comandos:
+
 ```
 cd backend
 ```
@@ -36,17 +37,15 @@ pipenv shell
 ```
 pipenv install
 ```
-```
-py manage.py makemigrations
-```
-```
-py manage.py migrate
-```
 
-Finalmente, para visualizar la pagina usaremos los comandos:
+Finalmente, para visualizar la pagina usaremos los comandos
+
+EN PYCHARM:
 ```
-cd pw-tk
+py manage.py runserver
 ```
+EN WEBSTORM:
 ```
 npm start
 ```
+
