@@ -14,7 +14,7 @@ function Navbar() {
 
                 <Link to="/Recipes"> <h4 className="nav-element nav-hover">Recetas</h4></Link>
 
-                <Link to={'/Carrito'}><h4 className="nav-element nav-hover">Carrito</h4></Link>
+                <Link to={'/Tienda'}><h4 className="nav-element nav-hover">Tienda</h4></Link>
 
                 <Link to={'/Profile'}><h4 className="nav-element nav-hover">Mi Perfil</h4></Link>
 

@@ -8,7 +8,7 @@ import {httpGet} from "../../utils/httpFunctions";
 
 
 
-function Carrito() {
+function Tienda() {
   const [products, setProducts] = useState([])
 
   const fetchProducts = () => {
@@ -56,4 +56,4 @@ function Carrito() {
   );
 }
 
-export default Carrito;
+export default Tienda;
