@@ -6,20 +6,20 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
+# Quick-start development settings - unsuitable for Recipesion
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# SECURITY WARNING: keep the secret key used in Recipesion secret!
 SECRET_KEY = 'django-insecure-3^y-#jtxk71ms9l@=%4s+g@i@uq!+p6ieg_mc5d7=c^a_5_^ex'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run with debug turned on in Recipesion!
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -154,3 +154,7 @@ CORS_ALLOWED_ORIGINS = [
 # dejar esta setting en True permite que cualquier front end app pueda hacer requests a este backend gnorando
 # la setting de arriba, lo seguro seria dejar esta setting en False y completar la lista de url's en esa setting
 CORS_ALLOW_ALL_ORIGINS = True
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=50),
+}

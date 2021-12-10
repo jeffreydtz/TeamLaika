@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
 from api.models import Recipe
+from api.models import Product
 
 
 class RecipeSerializer(serializers.ModelSerializer):
@@ -12,6 +13,15 @@ class RecipeSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         recipe = super(RecipeSerializer, self).create(validated_data)
         return recipe
+
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = "__all__"
+
+    def create(self, validated_data):
+        product = super(ProductSerializer, self).create(validated_data)
+        return product
 
 
 class RegisterSerializer(serializers.ModelSerializer):

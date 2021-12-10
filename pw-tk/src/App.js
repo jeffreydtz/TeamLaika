@@ -15,6 +15,8 @@ import LoginScreen from "./componentes/LoginScreen/LoginScreen";
 import AuthRoute from "./componentes/AuthRoute";
 import Register from "./componentes/LoginScreen/Register";
 import Footer from "./componentes/Footer/Footer";
+import Carrito from "./componentes/Cart/Carrito";
+
 
 
 
@@ -34,6 +36,9 @@ function App() {
                     </Route>
                     <Route path="/" exact={true}>
                         <Home />
+                    </Route>
+                    <Route exact={true} path={`/carrito`}>
+                        <Carrito/>
                     </Route>
                     <Route path="/Register" exact={true}>
                         <Register />
