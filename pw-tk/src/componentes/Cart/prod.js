@@ -1,7 +1,6 @@
    
 import React from 'react';
 import pgimg from "../../images/logo.png";
-import "../Cards/card.css"
 
 
 export default function Product(props) {
@@ -11,7 +10,7 @@ export default function Product(props) {
       <div className="all-cards">
           <div className="card-container-custom">
               <div className="card" >
-                  <img src={pgimg} className=" img-fluid" alt="..."/>
+                  <img src={pgimg} className="img-fluid" alt="..."/>
                   <div className="card-body">
                       <h5 className="card-title">{product.name} </h5>
                       <h6 className="card-title">${product.price} </h6>

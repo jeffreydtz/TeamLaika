@@ -10,13 +10,30 @@ import {httpGet} from "../../utils/httpFunctions";
 
 function Tienda() {
   const [products, setProducts] = useState([])
+  const [filtered, setFiltered] = useState(true)
 
-  const fetchProducts = () => {
-    httpGet('api/Products/')
-      .then((res) => setProducts(res.data))
+  const getName = () => {
+    return filtered ? "Dejar de filtrar" :"Filtrar por precio mayores a 50"
   }
 
-  useEffect(fetchProducts, []) 
+
+  const fetchProducts = () => {
+    setFiltered(!filtered)
+    if (filtered) {
+      httpGet('api/Products/')
+          .then((res) => setProducts(res.data))
+    }
+    else {
+      httpGet('api/Products/?price=50')
+          .then((res) => setProducts(res.data))
+
+    }}
+
+
+  useEffect(fetchProducts, [])
+
+
+
   const [cartItems, setCartItems] = useState([]);
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
@@ -43,9 +60,9 @@ function Tienda() {
     }
   };
   return (
-    <div className="App ">
+    <div className="App">
       <div className="row">
-        <Main products={products} onAdd={onAdd}/>
+        <Main products={products} onAdd={onAdd} fetchProducts={fetchProducts} getName={getName} />
         <Basket
     cartItems={cartItems}
     onAdd={onAdd}
