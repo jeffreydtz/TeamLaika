@@ -8,6 +8,7 @@ import {httpGet} from "../../utils/httpFunctions";
 
 
 
+
 function Tienda() {
   const [products, setProducts] = useState([])
   const [filtered, setFiltered] = useState(true)
@@ -72,5 +73,6 @@ function Tienda() {
     </div>
   );
 }
+
 
 export default Tienda;
